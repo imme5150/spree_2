@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
   # TODO - update
   # s.add_dependency 'aws-sdk', '1.27.0'
   s.add_dependency 'cancan', '~> 1.6.10'
-  s.add_dependency 'deface', '~> 1.0.0'
   s.add_dependency 'ffaker', '~> 1.16'
   s.add_dependency 'friendly_id', '5.0.3'
   s.add_dependency 'highline', '~> 1.6.18' # Necessary for the install generator
