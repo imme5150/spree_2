@@ -1,7 +1,6 @@
 require 'rails/all'
 require 'rails/generators'
 require 'jquery-rails'
-require 'canonical-rails'
 
 require 'spree/core'
 
