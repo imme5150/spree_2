@@ -1,6 +1,6 @@
 module Spree
   class ProductsController < Spree::StoreController
-    before_filter :load_product, :only => :show
+    before_action :load_product, :only => :show
     rescue_from ActiveRecord::RecordNotFound, :with => :render_404
     helper 'spree/taxons'
 

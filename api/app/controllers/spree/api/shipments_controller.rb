@@ -2,8 +2,8 @@ module Spree
   module Api
     class ShipmentsController < Spree::Api::BaseController
 
-      before_filter :find_order
-      before_filter :find_and_update_shipment, only: [:ship, :ready, :add, :remove]
+      before_action :find_order
+      before_action :find_and_update_shipment, only: [:ship, :ready, :add, :remove]
 
       def create
         authorize! :create, Shipment
