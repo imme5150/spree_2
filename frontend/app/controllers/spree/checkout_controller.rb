@@ -4,8 +4,6 @@ module Spree
   # checkout which has nothing to do with updating an order that this approach
   # is waranted.
   class CheckoutController < Spree::StoreController
-    ssl_required
-
     before_action :load_order_with_lock
 
     before_action :ensure_order_not_completed
