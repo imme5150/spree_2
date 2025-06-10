@@ -9,13 +9,11 @@ module Spree
   class << self
     # Add spree namespace and delegate to Rails TranslationHelper for some nice
     # extra functionality. e.g return reasonable strings for missing translations
-    def translate(*args)
+    def translate(key, **options)
       @virtual_path = virtual_path
 
-      options = args.extract_options!
       options[:scope] = [*options[:scope]].unshift(:spree)
-      args << options
-      super(*args)
+      super(key, **options)
     end
 
     alias_method :t, :translate
