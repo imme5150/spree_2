@@ -11,7 +11,7 @@ module Spree
 
     scope :active, -> { where(active: true) }
 
-    after_create :create_stock_items, :if => "self.propagate_all_variants?"
+    after_create :create_stock_items, :if => :propagate_all_variants?
 
     # Wrapper for creating a new stock item respecting the backorderable config
     def propagate_variant(variant)
