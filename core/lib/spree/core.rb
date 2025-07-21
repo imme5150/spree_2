@@ -59,7 +59,7 @@ require 'spree/migrations'
 require 'spree/core/engine'
 
 require 'spree/i18n'
-require 'spree/money'
+# require 'spree/money'
 
 require 'spree/permitted_attributes'
 require 'spree/core/user_address'
