@@ -48,11 +48,11 @@ module Spree
 
       def update
         find_order(true)
-        # Parsing line items through as an update_attributes call in the API will result in
+        # Parsing line items through as an update call in the API will result in
         # many line items for the same variant_id being created. We must be smarter about this,
         # hence the use of the update_line_items method, defined within order_decorator.rb.
         order_params.delete("line_items_attributes")
-        if @order.update_attributes(order_params)
+        if @order.update(order_params)
 
           deal_with_line_items if params[:order][:line_items]
 

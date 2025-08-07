@@ -69,7 +69,7 @@ describe Spree::Order do
         ]
       }
 
-      persisted_order.update_attributes(attributes)
+      persisted_order.update(attributes)
       expect(persisted_order.pending_payments.last.source.number).to be_present
     end
   end

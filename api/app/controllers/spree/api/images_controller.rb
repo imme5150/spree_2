@@ -15,7 +15,7 @@ module Spree
 
       def update
         @image = scope.images.accessible_by(current_ability, :update).find(params[:id])
-        @image.update_attributes(image_params)
+        @image.update(image_params)
         respond_with(@image, :default_template => :show)
       end
 

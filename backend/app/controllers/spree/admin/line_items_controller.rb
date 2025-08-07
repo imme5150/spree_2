@@ -27,7 +27,7 @@ module Spree
       end
 
       def update
-        @line_item.update_attributes(params[:line_item])
+        @line_item.update(params[:line_item])
         render_order_form
       end
 

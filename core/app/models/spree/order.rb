@@ -567,7 +567,7 @@ module Spree
       return if line_item_params.blank?
       line_item_params.each_value do |attributes|
         if attributes[:id].present?
-          self.line_items.find(attributes[:id]).update_attributes!(attributes)
+          self.line_items.find(attributes[:id]).update!(attributes)
         else
           self.line_items.create!(attributes)
         end

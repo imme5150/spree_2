@@ -29,7 +29,7 @@ module Spree
 
       def update
         authorize! :update, zone
-        if zone.update_attributes(map_nested_attributes_keys(Spree::Zone, params[:zone]))
+        if zone.update(map_nested_attributes_keys(Spree::Zone, params[:zone]))
           respond_with(zone, :status => 200, :default_template => :show)
         else
           invalid_resource!(zone)

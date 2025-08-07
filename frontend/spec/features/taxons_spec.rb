@@ -34,14 +34,14 @@ describe "viewing products", inaccessible: true do
     end
 
     it 'displays metas' do
-      t_shirts.update_attributes metas
+      t_shirts.update metas
       visit '/t/category/super-clothing/t-shirts'
       page.should have_meta(:description, 'Brand new Ruby on Rails TShirts')
       page.should have_meta(:keywords, 'ror, tshirt, ruby')
     end
 
     it 'display title if set' do
-      t_shirts.update_attributes metas
+      t_shirts.update metas
       visit '/t/category/super-clothing/t-shirts'
       page.should have_title("Ruby On Rails TShirt")
     end
@@ -53,7 +53,7 @@ describe "viewing products", inaccessible: true do
 
     # Regression test for #2814
     it "doesn't use meta_title as heading on page" do
-      t_shirts.update_attributes metas
+      t_shirts.update metas
       visit '/t/category/super-clothing/t-shirts'
       within("h1.taxon-title") do
         page.should have_content(t_shirts.name)

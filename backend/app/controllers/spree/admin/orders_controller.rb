@@ -61,7 +61,7 @@ module Spree
       end
 
       def update
-        if @order.update_attributes(params[:order]) && @order.line_items.present?
+        if @order.update(params[:order]) && @order.line_items.present?
           @order.update!
           unless @order.complete?
             # Jump to next step if order is not complete.

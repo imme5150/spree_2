@@ -128,7 +128,7 @@ describe Spree::Admin::OrdersController do
     end
 
     it 'should deny access to users with an bar role' do
-      order.stub(:update_attributes).and_return true
+      order.stub(:update).and_return true
       order.stub(:user).and_return Spree.user_class.new
       order.stub(:token).and_return nil
       user.spree_roles.clear

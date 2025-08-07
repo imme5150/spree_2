@@ -26,7 +26,7 @@ module Spree
 
       def update
         authorize! :update, user
-        if user.update_attributes(user_params)
+        if user.update(user_params)
           respond_with(user, :status => 200, :default_template => :show)
         else
           invalid_resource!(user)

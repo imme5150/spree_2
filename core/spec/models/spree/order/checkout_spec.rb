@@ -405,7 +405,7 @@ describe Spree::Order do
     let(:permitted_params) { {} }
     let(:params) { {} }
     it 'calls update_atributes without order params' do
-      order.should_receive(:update_attributes).with({})
+      order.should_receive(:update).with({})
       order.update_from_params( params, permitted_params)
     end
 
@@ -460,7 +460,7 @@ describe Spree::Order do
       let(:params) { ActionController::Parameters.new(order: {  bad_param: 'okay' } ) }
 
       it 'does not let through unpermitted attributes' do
-        order.should_receive(:update_attributes).with({})
+        order.should_receive(:update).with({})
         order.update_from_params(params, permitted_params)
       end
 
@@ -468,7 +468,7 @@ describe Spree::Order do
         let(:params) { ActionController::Parameters.new(order: {  good_param: 'okay' } ) }
 
         it 'accepts permitted attributes' do
-          order.should_receive(:update_attributes).with({"good_param" => 'okay'})
+          order.should_receive(:update).with({"good_param" => 'okay'})
           order.update_from_params(params, permitted_params)
         end
       end
@@ -478,7 +478,7 @@ describe Spree::Order do
           order.should_receive(:update_params_payment_source).and_return false
         end
         it 'does not let through unpermitted attributes' do
-          order.should_not_receive(:update_attributes).with({})
+          order.should_not_receive(:update).with({})
           order.update_from_params(params, permitted_params)
         end
       end

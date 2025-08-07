@@ -93,14 +93,14 @@ describe Spree::Admin::UsersController do
     end
 
     it "allows shipping address attributes through" do
-      mock_user.should_receive(:update_attributes).with(hash_including(
+      mock_user.should_receive(:update).with(hash_including(
         "ship_address_attributes" => { "city" => "New York" }
       ))
       spree_put :update, { :id => mock_user.id, :user => { :ship_address_attributes => { :city => "New York" } } }
     end
 
     it "allows billing address attributes through" do
-      mock_user.should_receive(:update_attributes).with(hash_including(
+      mock_user.should_receive(:update).with(hash_including(
         "bill_address_attributes" => { "city" => "New York" }
       ))
       spree_put :update, { :id => mock_user.id, :user => { :bill_address_attributes => { :city => "New York" } } }

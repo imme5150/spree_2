@@ -19,7 +19,7 @@ module Spree
         end
 
         def update
-          if @order.update_attributes(order_params)
+          if @order.update(order_params)
             if params[:guest_checkout] == "false"
               @order.associate_user!(Spree.user_class.find_by_email(@order.email))
             end

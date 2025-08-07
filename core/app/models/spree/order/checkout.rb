@@ -225,7 +225,7 @@ module Spree
                 attributes[:payments_attributes].first.delete :source_attributes
               end
 
-              success = self.update_attributes(attributes)
+              success = self.update(attributes)
             end
             @updating_params = nil
             success

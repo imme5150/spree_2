@@ -160,5 +160,5 @@ masters = {
 Spree::Variant.create!(variants)
 
 masters.each do |product, variant_attrs|
-  product.master.update_attributes!(variant_attrs)
+  product.master.update!(variant_attrs)
 end

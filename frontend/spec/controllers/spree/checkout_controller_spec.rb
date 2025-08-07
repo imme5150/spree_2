@@ -170,7 +170,7 @@ describe Spree::CheckoutController do
     context "save unsuccessful" do
       before do
         order.stub :user => user
-        order.stub :update_attributes => false
+        order.stub :update => false
       end
 
       it "should not assign order" do
@@ -205,7 +205,7 @@ describe Spree::CheckoutController do
     context "Spree::Core::GatewayError" do
       before do
         order.stub :user => user
-        order.stub(:update_attributes).and_raise(Spree::Core::GatewayError.new("Invalid something or other."))
+        order.stub(:update).and_raise(Spree::Core::GatewayError.new("Invalid something or other."))
         spree_post :update, {:state => "address"}
       end
 
@@ -250,7 +250,7 @@ describe Spree::CheckoutController do
 
       context "when the order is invalid" do
         before do
-          order.stub :update_attributes => true, :next => nil
+          order.stub :update => true, :next => nil
           order.errors.add :base, 'Base error'
           order.errors.add :adjustments, 'error'
         end

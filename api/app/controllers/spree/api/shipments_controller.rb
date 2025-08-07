@@ -27,7 +27,7 @@ module Spree
           @shipment.adjustment.open
         end
 
-        @shipment.update_attributes(shipment_params)
+        @shipment.update(shipment_params)
 
         if unlock == 'yes'
           @shipment.adjustment.close
@@ -82,7 +82,7 @@ module Spree
 
       def find_and_update_shipment
         @shipment = @order.shipments.accessible_by(current_ability, :update).find_by!(number: params[:id])
-        @shipment.update_attributes(shipment_params)
+        @shipment.update(shipment_params)
         @shipment.reload
       end
 

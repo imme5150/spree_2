@@ -40,7 +40,7 @@ module Spree
           end
         end
 
-        if @payment_method.update_attributes(attributes)
+        if @payment_method.update(attributes)
           invoke_callbacks(:update, :after)
           flash[:success] = Spree.t(:successfully_updated, :resource => Spree.t(:payment_method))
           redirect_to edit_admin_payment_method_path(@payment_method)

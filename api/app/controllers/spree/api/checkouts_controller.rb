@@ -39,7 +39,7 @@ module Spree
         authorize! :update, @order, order_token
         order_params = object_params
         line_items = order_params.delete('line_items_attributes')
-        if @order.update_attributes(order_params)
+        if @order.update(order_params)
           @order.update_line_items(line_items)
           if current_api_user.has_spree_role?('admin') && user_id.present?
             @order.associate_user!(Spree.user_class.find(user_id))

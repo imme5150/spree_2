@@ -51,7 +51,7 @@ module Spree
         end
 
         context 'when stock item prevents backordering' do
-          before { stock_item.update_attributes(backorderable: false) }
+          before { stock_item.update(backorderable: false) }
 
           specify { subject.backorderable?.should be_false }
 
@@ -84,7 +84,7 @@ module Spree
         end
 
         context 'when all stock items prevent backordering' do
-          before { stock_item.update_attributes(backorderable: false) }
+          before { stock_item.update(backorderable: false) }
 
           specify { subject.backorderable?.should be_false }
 

@@ -85,11 +85,11 @@ module Spree
         @product = find_product(params[:id])
         authorize! :update, @product
 
-        if @product.update_attributes(product_params)
+        if @product.update(product_params)
           variants_params.each do |variant_attribute|
             # update the variant if the id is present in the payload
             if variant_attribute['id'].present?
-              @product.variants.find(variant_attribute['id'].to_i).update_attributes(variant_attribute)
+              @product.variants.find(variant_attribute['id'].to_i).update(variant_attribute)
             else
               # make sure the product is assigned before the options=
               @product.variants.create({ product: @product }.merge(variant_attribute))
