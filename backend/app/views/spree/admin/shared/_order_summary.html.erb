@@ -3,20 +3,20 @@
     <dt id="order_status" data-hook><%= Spree.t(:status) %>:</dt>
     <dd><span class="state <%= @order.state %>"><%= Spree.t(@order.state, :scope => :order_state) %></span></dd>
     <dt data-hook><%= Spree.t(:subtotal) %>:</dt>
-    <dd id='item_total'><%= @order.display_item_total.to_html %></dd>
+    <dd id='item_total'><%= number_to_currency @order.item_total %></dd>
     <% if checkout_steps.include?("delivery") && @order.ship_total > 0 %>
       <dt data-hook><%= Spree.t(:ship_total) %>:</dt>
-      <dd id='item_total'><%= @order.display_ship_total.to_html %></dd>
+      <dd id='item_total'><%= number_to_currency @order.shipment_total %></dd>
     <% end %>
 
     <% if @order.included_tax_total != 0 %>
       <dt data-hook><%= Spree.t(:tax_included) %>:</dt>
-      <dd id='included_tax_total'><%= @order.display_included_tax_total.to_html %></dd>
+      <dd id='included_tax_total'><%= number_to_currency @order.included_tax_total %></dd>
     <% end %>
 
     <% if @order.additional_tax_total != 0 %>
       <dt data-hook><%= Spree.t(:tax) %>:</dt>
-      <dd id='item_total'><%= @order.display_additional_tax_total.to_html %></dd>
+      <dd id='item_total'><%= number_to_currency @order.additional_tax_total %></dd>
     <% end %>
 
     <dt data-hook><%= Spree.t(:total) %>:</dt>
