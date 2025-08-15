@@ -13,4 +13,4 @@
 <% @order.adjustments.eligible.each do |adjustment| %>
   <%= raw(adjustment.label) %> <%= adjustment.display_amount %>
 <% end %>
-<%= Spree.t('order_mailer.cancel_email.total', :total => @order.display_total) %>
+<%= Spree.t('order_mailer.cancel_email.total', :total => @order.total) %>

@@ -41,7 +41,7 @@
               <div class="state <%= order.shipment_state %>"><%= Spree.t("shipment_states.#{order.shipment_state}") %></div>
             <% end %>
           </td>
-          <td class="align-center order-total"><%= order.display_total.to_html %></td>
+          <td class="align-center order-total"><%= number_to_currency order.total %></td>
         </tr>
       <% end %>
       </tbody>

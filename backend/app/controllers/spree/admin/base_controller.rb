@@ -3,7 +3,7 @@ module Spree
     class BaseController < Spree::BaseController
       helper 'spree/admin/navigation'
       helper 'spree/admin/tables'
-      layout '/spree/layouts/admin'
+      layout 'spree/layouts/admin'
 
       before_action :check_alerts
       before_action :authorize_admin

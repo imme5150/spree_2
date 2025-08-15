@@ -22,7 +22,7 @@
   <% end %>
   <tr class="cart-total">
     <td colspan="4" align='right'><h5><%= Spree.t(:total) %></h5></th>
-    <td colspan><h5><%= order_form.object.display_total %></h5></td>
+    <td colspan><h5><%= number_to_currency order_form.object.total %></h5></td>
     <td></td>
   </tr>
 </table>

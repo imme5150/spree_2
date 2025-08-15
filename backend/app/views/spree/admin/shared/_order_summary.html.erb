@@ -20,7 +20,7 @@
     <% end %>
 
     <dt data-hook><%= Spree.t(:total) %>:</dt>
-    <dd id='order_total'><%= @order.display_total.to_html %></dd>
+    <dd id='order_total'><%= number_to_currency @order.total %></dd>
 
     <% if @order.completed? %>
       <dt><%= Spree.t(:shipment) %>: </dt>

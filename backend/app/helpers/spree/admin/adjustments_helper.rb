@@ -26,7 +26,7 @@ module Spree
         parts = []
         parts << variant.product.name
         parts << "(#{variant.options_text})" if variant.options_text.present?
-        parts << line_item.display_total
+        parts << line_item.amount
         parts.join("<br>").html_safe
       end
 

@@ -15,6 +15,6 @@
   <%= raw(adjustment.label) %> <%= adjustment.display_amount %>
 <% end %>
 
-<%= Spree.t('order_mailer.confirm_email.total', :total => @order.display_total) %>
+<%= Spree.t('order_mailer.confirm_email.total', :total => @order.total) %>
 
 <%= Spree.t('order_mailer.confirm_email.thanks') %>
