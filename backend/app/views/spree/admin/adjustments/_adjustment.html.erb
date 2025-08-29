@@ -5,7 +5,7 @@
 <tr id="<%= spree_dom_id(adjustment) %>" data-hook="adjustment_row" class="<%= cycle('odd', 'even')%>">
   <td class="align-center"><%= display_adjustable(adjustment.adjustable) %></td>
   <td class="align-center"><%= adjustment.label %></td>
-  <td class="align-center"><%= adjustment.display_amount.to_html %></td>
+  <td class="align-center"><%= number_to_currency adjustment.amount %></td>
   <td class="align-center"><%= adjustment_state(adjustment) %></td>
   <td class='actions'>
     <% if adjustment.open? %>

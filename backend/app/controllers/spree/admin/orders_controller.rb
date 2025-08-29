@@ -77,26 +77,26 @@ module Spree
       def cancel
         @order.cancel!
         flash[:success] = Spree.t(:order_canceled)
-        redirect_to :back
+        redirect_back fallback_location:'/admin'
       end
 
       def resume
         @order.resume!
         flash[:success] = Spree.t(:order_resumed)
-        redirect_to :back
+        redirect_back fallback_location:'/admin'
       end
 
       def approve
         @order.approved_by(try_spree_current_user)
         flash[:success] = Spree.t(:order_approved)
-        redirect_to :back
+        redirect_back fallback_location:'/admin'
       end
 
       def resend
         OrderMailer.confirm_email(@order.id, true).deliver
         flash[:success] = Spree.t(:order_email_resent)
 
-        redirect_to :back
+        redirect_back fallback_location:'/admin'
       end
 
       def open_adjustments
@@ -104,7 +104,7 @@ module Spree
         adjustments.update_all(:state => 'open')
         flash[:success] = Spree.t(:all_adjustments_opened)
 
-        respond_with(@order) { |format| format.html { redirect_to :back } }
+        respond_with(@order) { |format| format.html { redirect_back fallback_location:'/admin' } }
       end
 
       def close_adjustments
@@ -112,7 +112,7 @@ module Spree
         adjustments.update_all(:state => 'closed')
         flash[:success] = Spree.t(:all_adjustments_closed)
 
-        respond_with(@order) { |format| format.html { redirect_to :back } }
+        respond_with(@order) { |format| format.html { redirect_back fallback_location:'/admin' } }
       end
 
       private
@@ -123,7 +123,7 @@ module Spree
 
         # Used for extensions which need to provide their own custom event links on the order details view.
         def initialize_order_events
-          @order_events = %w{approve cancel resume}
+          @order_events = %i{approve cancel resume}
         end
 
         def model_class

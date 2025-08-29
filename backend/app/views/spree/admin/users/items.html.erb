@@ -47,9 +47,9 @@
                   <strong><%= Spree.t(:sku) %>:</strong> <%= item.variant.sku %>
                 <% end %>
               </td>
-              <td class="align-center item-price"><%= item.single_money.to_html %></td>
+              <td class="align-center item-price"><%= number_to_currency item.price %></td>
               <td class="align-center item-quantity"><%= item.quantity %></td>
-              <td class="align-center item-total"><%= item.money.to_html %></td>
+              <td class="align-center item-total"><%= number_to_currency item.amount %></td>
               <td class="align-center order-state">
                 <div class="state <%= order.state.downcase %>"><%= Spree.t("order_state.#{order.state.downcase}") %></div>
                 <% if order.payment_state %>

@@ -35,7 +35,7 @@
   <%= f.field_container :amount do %>
     <%= f.label :amount, Spree.t(:amount) %> <span class="required">*</span><br />
     <% if @return_authorization.received? %>
-      <%= @return_authorization.display_amount %>
+      <%= number_to_currency @return_authorization.amount %>
     <% else %>
       <%= f.text_field :amount, {:style => 'width:80px;'} %> <%= Spree.t(:rma_value) %>: <span id="rma_value">0.00</span>
       <%= f.error_message_on :amount %>

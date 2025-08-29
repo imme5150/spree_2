@@ -9,7 +9,7 @@
         <strong><%= Spree.t(:sku) %>:</strong> <%= item.variant.sku %>
       <% end %>
     </td>
-    <td class="item-price align-center"><%= item.line_item.single_money.to_html %></td>
+    <td class="item-price align-center"><%= number_to_currency item.line_item.price %></td>
     <td class="item-qty-show align-center">
         <% item.states.each do |state,count| %>
           <%= count %> x <%= Spree.t(state).downcase %>

@@ -23,11 +23,11 @@
       <legend><%= Spree.t(:lifetime_stats) %></legend>
       <dl id="user-lifetime-stats">
         <dt><%= Spree.t(:total_sales) %>:</dt>
-          <dd><%= @user.display_lifetime_value.to_html %></dd>
+          <dd><%= number_to_currency @user.lifetime_value %></dd>
         <dt><%= Spree.t(:num_orders) %>:</dt>
           <dd><%= @user.order_count.to_i %></dd>
         <dt><%= Spree.t(:average_order_value) %>:</dt>
-          <dd><%= @user.display_average_order_value.to_html %></dd>
+          <dd><%= number_to_currency @user.average_order_value %></dd>
         <dt><%= Spree.t(:member_since) %>:</dt>
           <dd><%= l @user.created_at.to_date %></dd>
       </dl>
