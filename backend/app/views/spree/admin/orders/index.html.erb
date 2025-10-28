@@ -31,7 +31,7 @@
 
         <div class="field">
           <%= label_tag nil, Spree.t(:status) %>
-          <%= f.select :state_eq, Spree::Order.state_machines[:state].states.collect {|s| [Spree.t("order_state.#{s.name}"), s.value]}, {:include_blank => true}, :class => 'select2' %>
+          <%= f.select :state_eq, Spree::Order.state_machines[:state].states.collect {|s| [Spree.t("order_state.#{s.name}"), s.value]}, {:include_blank => true} %>
         </div>
 
       </div>
@@ -67,7 +67,7 @@
         </div>
         <div class="field">
           <%= label_tag nil, Spree.t(:promotion) %>
-          <%= f.select :promotions_id_in, Spree::Promotion.all.collect {|p| [p.name, p.id]}, {:include_blank => true}, :class => 'select2' %>
+          <%= f.select :promotions_id_in, Spree::Promotion.all.collect {|p| [p.name, p.id]}, {:include_blank => true} %>
         </div>
       </div>
 

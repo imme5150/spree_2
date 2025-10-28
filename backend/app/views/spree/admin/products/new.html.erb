@@ -27,7 +27,7 @@
       <div class="four columns">
         <%= f.field_container :prototype do %>
           <%= f.label :prototype_id, Spree.t(:prototype) %><br />
-          <%= f.collection_select :prototype_id, Spree::Prototype.all, :id, :name, {:include_blank => true}, {:class => 'select2 fullwidth'} %>
+          <%= f.collection_select :prototype_id, Spree::Prototype.all, :id, :name, {:include_blank => true}, {:class => 'fullwidth'} %>
         <% end %>
       </div>
 
@@ -53,7 +53,7 @@
       <div class="alpha four columns">
         <%= f.field_container :shipping_category do %>
           <%= f.label :shipping_category_id, Spree.t(:shipping_categories) %><span class="required">*</span><br />
-          <%= f.collection_select(:shipping_category_id, @shipping_categories, :id, :name, { :include_blank => Spree.t('match_choices.none') }, { :class => 'select2 fullwidth' }) %>
+          <%= f.collection_select(:shipping_category_id, @shipping_categories, :id, :name, { :include_blank => Spree.t('match_choices.none') }, { :class => 'fullwidth' }) %>
           <%= f.error_message_on :shipping_category_id %>
         <% end %>
       </div>

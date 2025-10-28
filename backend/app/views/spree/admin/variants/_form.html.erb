@@ -4,7 +4,7 @@
       <div class="field" data-hook="presentation">
         <%= label :new_variant, option_type.presentation %>
         <%= f.collection_select 'option_value_ids', option_type.option_values, :id, :presentation,
-          { :prompt => true }, { :name => 'variant[option_value_ids][]', :class => 'select2 fullwidth' } %>
+          { :prompt => true }, { :name => 'variant[option_value_ids][]', :class => 'fullwidth' } %>
       </div>
     <% end %>
 
@@ -25,7 +25,7 @@
 
     <div class="field" data-hook="tax_category">
       <%= f.label :tax_category_id, Spree.t(:tax_category) %>
-      <%= f.collection_select(:tax_category_id, @tax_categories, :id, :name, { :include_blank => Spree.t('match_choices.none') }, { :class => 'select2 fullwidth' }) %>
+      <%= f.collection_select(:tax_category_id, @tax_categories, :id, :name, { :include_blank => Spree.t('match_choices.none') }, { :class => 'fullwidth' }) %>
     </div>
   </div>
 </div>

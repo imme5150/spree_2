@@ -10,7 +10,7 @@
   <div class="omega six columns">
     <%= f.field_container :display_on do %>
       <%= f.label :display_on, Spree.t(:display) %><br />
-      <%= select(:shipping_method, :display_on, Spree::ShippingMethod::DISPLAY.collect { |display| [Spree.t(display), display == :both ? nil : display.to_s] }, {}, {:class => 'select2 fullwidth'}) %>
+      <%= select(:shipping_method, :display_on, Spree::ShippingMethod::DISPLAY.collect { |display| [Spree.t(display), display == :both ? nil : display.to_s] }, {}, {:class => 'fullwidth'}) %>
       <%= error_message_on :shipping_method, :display_on %>
     <% end %>
   </div>
@@ -76,7 +76,7 @@
     <fieldset class="tax_categories no-border-bottom">
       <legend align="center"><%= Spree.t(:tax_category) %></legend>
         <%= f.field_container :categories do %>
-          <%= f.select :tax_category_id, @tax_categories.map { |tc| [tc.name, tc.id] }, {}, :class => "select2 fullwidth" %>
+          <%= f.select :tax_category_id, @tax_categories.map { |tc| [tc.name, tc.id] }, {}, :class => "fullwidth" %>
           <%= error_message_on :shipping_method, :tax_category_id %>
         <% end %>
     </fieldset>
