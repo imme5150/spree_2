@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
   # s.add_dependency 'aws-sdk', '1.27.0'
   s.add_dependency 'cancancan'
   s.add_dependency 'ffaker', '~> 1.16'
-  s.add_dependency 'friendly_id', '5.0.3'
+  s.add_dependency 'friendly_id'
   s.add_dependency 'highline', '~> 1.6.18' # Necessary for the install generator
   s.add_dependency 'httparty', '~> 0.11' # For checking alerts.
   s.add_dependency 'json'
