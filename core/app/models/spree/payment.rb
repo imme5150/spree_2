@@ -164,8 +164,6 @@ module Spree
         return unless source.respond_to?(:has_payment_profile?) && !source.has_payment_profile?
 
         payment_method.create_profile(self)
-      rescue ActiveMerchant::ConnectionError => e
-        gateway_error e
       end
 
       def invalidate_old_payments
