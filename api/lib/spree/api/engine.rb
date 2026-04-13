@@ -6,9 +6,9 @@ module Spree
       isolate_namespace Spree
       engine_name 'spree_api'
 
-      Rabl.configure do |config|
+      RablRails.configure do |config|
         config.include_json_root = false
-        config.include_child_root = false
+        # config.include_child_root = false
       end
 
       config.view_versions = [1]

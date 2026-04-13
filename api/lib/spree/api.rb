@@ -1,6 +1,6 @@
 require 'spree/core'
 
-require 'rabl'
+require 'rabl-rails'
 
 module Spree
   module Api
