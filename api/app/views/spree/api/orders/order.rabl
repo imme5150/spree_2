@@ -1,5 +1,4 @@
-cache @order
-attributes *order_attributes
+attributes *Spree::Api::ApiHelpers.order_attributes
 node(:display_item_total) { |o| o.item_total }
 node(:total_quantity) { |o| o.line_items.sum(:quantity) }
 node(:display_total) { |o| o.total }

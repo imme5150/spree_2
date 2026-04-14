@@ -1,10 +1,9 @@
 object @address
-cache @address
-attributes *address_attributes
+attributes *Spree::Api::ApiHelpers.address_attributes
 
 child(:country) do |address|
-  attributes *country_attributes
+  attributes *Spree::Api::ApiHelpers.country_attributes
 end
 child(:state) do |address|
-  attributes *state_attributes
+  attributes *Spree::Api::ApiHelpers.state_attributes
 end

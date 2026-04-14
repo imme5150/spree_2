@@ -1,2 +1,2 @@
 object @payment
-attributes *payment_attributes
+attributes *Spree::Api::ApiHelpers.payment_attributes

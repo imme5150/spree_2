@@ -1,7 +1,5 @@
-object @variant
-attributes *variant_attributes
-
-cache ['big_variant', root_object]
+object :variant
+attributes *Spree::Api::ApiHelpers.variant_attributes
 
 extends "spree/api/variants/small"
 

@@ -1,3 +1,2 @@
 object @credit_card
-cache @credit_card
-attributes *creditcard_attributes
+attributes *Spree::Api::ApiHelpers.creditcard_attributes
