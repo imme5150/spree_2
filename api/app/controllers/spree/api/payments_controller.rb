@@ -36,7 +36,7 @@ module Spree
       end
 
       def show
-        respond_with(@payment)
+        head :no_content
       end
 
       def authorize

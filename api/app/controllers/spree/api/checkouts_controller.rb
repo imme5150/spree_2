@@ -98,7 +98,7 @@ module Spree
         end
 
         def raise_insufficient_quantity
-          respond_with(@order, default_template: 'spree/api/orders/insufficient_quantity')
+          head :conflict
         end
 
         def state_callback(before_or_after = :before)
